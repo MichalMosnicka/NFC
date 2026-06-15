@@ -85,10 +85,10 @@
     </div>
 
     <script>
-        // Zašifrovaná verze tvého hesla "18725"
-        const SPRAVNY_HASH = "681283EE4D857A42A58F58742E9BF762A769741DA83FA38C15E397B8F9A5F197";
+        // Jednoduché heslo bez šifrování
+        const SPRAVNE_HESLO = "18725";
 
-        // Tady je tvých 30 vět - ty si můžeš kdykoliv přepsat uvnitř těch uvozovek
+        // Tady je tvých 30 vět
         const vety = [
             "Dneska to bude skvělý den!",
             "Nezapomeň se napít vody.",
@@ -104,7 +104,7 @@
             "Věř si, dokázal jsi už těžší věci.",
             "Být laskavý je superschopnost.",
             "Soustřeď se na přítomný okamžik.",
-            "Nezapomeň dneska někoho pochvalt.",
+            "Nezapomeň dneska někoho pochválit.",
             "Malé kroky tě taky dovedou k velkému cíli.",
             "Dnešní cíl: Žádný stres.",
             "Jsi originál, nikdo jiný na světě není jako ty.",
@@ -122,22 +122,13 @@
             "Dokončeno! Jsi super!"
         ];
 
-        // Pomocná funkce pro zašifrování zadaného textu do SHA-256
-        async function sha256(message) {
-            const msgBuffer = new TextEncoder().encode(message);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
-        }
-
-        // Funkce pro bezpečné ověření hesla
-        async function overHeslo() {
+        // Funkce pro jednoduché ověření hesla
+        function overHeslo() {
             const zadaneHeslo = document.getElementById("hesloInput").value;
             const chybaElement = document.getElementById("chyba");
-            
-            const zadanyHash = await sha256(zadaneHeslo);
 
-            if (zadanyHash === SPRAVNY_HASH) {
+            // Porovnáme text napřímo
+            if (zadaneHeslo === SPRAVNE_HESLO) {
                 document.getElementById("prijhlaseni").classList.add("hidden");
                 document.getElementById("obsah").classList.remove("hidden");
                 ukazNahodnouVetu();

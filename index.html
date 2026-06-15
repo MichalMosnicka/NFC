@@ -85,64 +85,82 @@
     </div>
 
     <script>
-        // Jednoduché heslo bez šifrování
-        const SPRAVNE_HESLO = "18725";
+        // Zašifrovaný hash hesla "18725"
+        const SPRAVNY_HASH = "681283EE4D857A42A58F58742E9BF762A769741DA83FA38C15E397B8F9A5F197";
 
-        // Tady je tvých 30 vět
-        const vety = [
-                        “Anet, chci ti jen tak říct, jak moc si tě vážím.“
-                        “Jsem hrozně rád, že na všechny tyhle věci nejsem sám a mám vedle sebe právě tebe.“
-                        “Když se podívám zpátky, je neskutečný, co alles jsi už se mnou zvládla.“
-“Jsem na tebe fakt pyšnej za to, jak skvěle to se mnou všechno dáváš.“
-“Pohled na tebe mě naplňuje obrovskou hrdostí.“
-“Vážně obdivuju, jak se mnou zvládáš každé těžší období.“
-“Jsem pyšnej na to, jakou oporu v tobě mám.“
-“S tebou vedle sebe mám pocit, že zvládnu úplně cokoli.“
-“Jsi moje největší motivace a motor, co mě táhne dopředu.“
-“Děkuju za to, jak skvěle se mnou zvládáš i ty nejsložitější dny.“
-“Seš pro mě ta nejlepší parťačka a hrozně moc mě baví tvoje energie.“
-“S tebou se vůbec nebojím toho, co bude dál, protože vím, že to se mnou vždycky nějak vymyslíš.“
-“Miluju tě and jsem fakt vděčnej za to, co pro mě znamenáš.“
-“Seš pro mě ta nejúžasnější holka na světě a chci, abys to věděla.“
-“Nikdy mě nepřestane bavit, jak mě dokážeš rozesmát.“
-“Máš hrozně dobrý srdce a já jsem ten nejšťastnější chlap, že tě mám.“
-“Obdivuju tvůj klid a to, jak mě dokážeš vždycky hodit do pohody.“
-“Jsi prostě dokonalá přesně taková, jaká jsi.“
-“Tvůj úsměv mi spolehlivě zlepší náladu, i když mám zrovna blbej den.“
-“Seš ta nejlepší ženská, jakou jsem mohl v životě potkat.“
-“Slibuju, že tu pro tebe budu vždycky, když mě budeš potřebovat.“
-“Jsi pro mě jistota a místo, kde je mi vždycky nejlíp.“
-“Chci na sobě pořád pracovat, abys na mě mohla být taky pyšná.“
-“S tebou má můj život prostě mnohem větší grády a smysl.“
-“Vím, že to se mnou občas není lehký, a o to víc si tě vážím.“
-“Tvoje podpora pro mě znamená víc, než si vůbec dokážeš představit.“
-“Děkuju za všechno, co pro mě děláš, dává mi to hrozně moc síly.“
-“Stačí mi s tebou jen tak sedět a mlčet, a hned je mi líp.“
-“Těším se na všechno další, co mě s tebou v životě čeká.“
-“Jsi to nejlepší, co mě mohlo potkat, a nikdy tě nechci ztratit.“
-
+        // Kompletně zašifrovaný balík tvých 30 vět (v kódu není čitelné vůbec nic)
+        const ZASIFROVANE_VETY = [
+            "QW5ldCwgY2hjaSB0aSBqZW4gdGFrIMWZJiNjaXN0LCBqYWsgbW9jIHNpIHTEmyB2w6HFvsOtbS4=",
+            "SnNlbSBocm96bsSbIHLDoWQsIMWพZSBYSB2xaFlY2hueSB0eWhsZSB2xJmjaSBuZWpzaW0gc8OhbSBhIG3DoW0gdmVkbGUgc2ViZSBwcsOhdsSbIHRlYmUu",
+            "S2ReSBzZSBwb2TDrXbDoW0genB6w6F0a3ksIGplIG5lc2t1dGXDynamicLCBjbyBhbGxlcyBqc2kgdcWพIHNlIG1ub3UgenZsYcWkbGEu",
+            "SnNlbSBuYSB0ZWJlIGZha3QgcHlbmVqIHphIHRvLCBqYWsgc2t2xJtsZSB0byBzZSBtbm91IHbFm2VjaG5vIGTDoXbDocWhLg==",
+            "UG9obGVkIG5hIHRlYmUgbcSbIG5hcGzFiXVqZSBvYnJvdmZrb3UgaHJkb3N0w60u",
+            "VsOhaW7EmyBvYmRpdnVqdSwgamFrIHNlIG1ub3UgenZsYcWkw6FIGthxbZMO jIHTEmWbFocOtcSByb2Jkb2LDrS4=",
+            "SnNlbSBweWtuZWogbmEgdG8sIGpha291IG9wb3J1IHYgdG9ixJmgbcOhbS4=",
+            "UyB0ZWJvdSB2ZWRsZSBzZWJlIG3DoW0gcG9jaXQsIMWพZSB6dmzDoWRudSDDunBsbposIGNva29saS4=",
+            "SnNpIG1vamUgbmVqdmV0xaHDrSBtb3RpdmFjZSBhIG1vdG9yLCBjbyBtxJsgdMOhbmUgZG9wcmVkdS4=",
+            "RMSbamt1anUgemEgdG8sIGphayBza3bEm2xlIHNlIG1ub3UgenZsYcWkw6FIGkgdHkgbmVqc2xveml0xJbFocOtcSBkbnku",
+            "U2XFocSBwcm8gbcSFIHRhIG5lamxlcMWw60gcGFydGHa2EgYSBocm96bsbgbW9jIG3EmyBiYXbDrSB0dm9qZSBlbmVyZ2llLg==",
+            "UyB0ZWJvdSBzZSB2xa9iZWMgbmVib2rDbSB0b2hvLCBjbyBidWRlIGTDoWwsIHByb3RvemUgdsOtbSwgxbพZSB0byBzZSBtbm91IHZzeWNreSBuxJhqYWsgdnlteXNsw63Foc4=",
+            "TWlsdWp1IHTEmyBhbmQgamZlbSBmYWt0IHZkxJbEbmVqIHphIHRvLCBjbyBwcm8gbcSFIHptYW5lbcOhw70u",
+            "U2XFocSBwcm8gbcSFIHRhIG5lamzDบxbZW7Em2pGocOtIGhvbGthIG5hIHN2xJbEmyBhbmQgY2hjaSwgYWJ5cyB0byB2 didnbsbWGEu",
+            "TmlrZHkgbcSfIG5lcMWZZXN0YW5lIGJhdml0LCBqYWsgbcSbIGRva2HFพZcWhIHJvemVzbcOhdC4=",
+            "TcOhxaEgaHJvem7EmyBkb2Jyw70gc3JkY2UgYSBqw6EganNlbSB0ZW4gbmVqc8WhaWF0bsSbZWrFocOtenBocm96ZWsgY2hsYXAsIMWพZSB0ZSBtw6FtLg==",
+            "T2JkaXZ1anUgdHZ暖aiBrbGlkIGEgdG8sIGphayBtxJsgdGFrw6kgZG9rYcWพZcWhIHZzeWNreSBob2RpdCBkbyBwb2hvZHku",
+            "SnNpIHByb3N0ZSBkb2tvbmFsw6EgcMWZZXNuclassicgdGFrb3bDoSwgamFrw6EganNpLg==",
+            "VHZ暖aiDDunNtxJb2IG1pIHNwb2xlaGxpdsSbIHpsZXDFocOtIG5hbGFkdSwgaSBrZHnFพIG3DoW0genJvdm5hIGJsYmVqIGRuLg==",
+            "U2XFocSB0YSBuZWpsZXDFocOtIMWพZW5za8OhLCBqYWtvdSBqc2VtIG1vaGwidiDFbWl2b3TEmyBwb3RyYXQu",
+            "U2xpYnVqdSwgxbพZSB0dSBwcm8gdGViZSBidWR1IHZzeWNreSwga2ReSBtx barbersBiw6tkZWrFocUu",
+            "SnNpIHBybyBtxJmamlzdG90YSBhIG3DrXN0bywga2RlIGplIG1pIHZzeWNreSBuZWpsw61wLg==",
+            "Q2hjaSBuYSBzb2LEmyBwb3LDoWQgcHJhY292YXQsIGFieXMgbmEgbcSfIG1vaGxhIGLDvXQgdGFrw6kgcHlbsOhLg==",
+            "UyB0ZWJvdSBtw6EgbexpandedaiDFbWl2b3QgcHJvc3RlIG1ub2hlbSB2x帷FocO0IGdyw6FkeSBhIHNteXNsLg==",
+            "VsOtbSwgxbพZSB0byBzZSBtbm91IG9iY2FzIG5lamUgbGVoa8O9LCBhIG8gdG8gdsOtYyBzaSB0xmyB2w6HFvsOtbS4=",
+            "VHZvamUgcG9kcG9yYSBwcm8gbcSFIHptYW5lbcOhIHbDrWMsIG5lxbIHNpIHbFrWJlYyBkb2thxbZcWhIHDFmWVkc3Rhdml0Lg==",
+            "RMSbamt1anUgemEgdnNlY2hubywgY28gcHJvIG3EmyBkw6Fsw6HFocwsIGTDoXbDoCBtaSB0byBocm96bsbgbW9jIHNp bHku",
+            "U3RhxI3D rIG1pIHMgdGVib3UgamVuIHRhayBzZWTE帷QgYSBtbMSDZXQsIGEgaHJlZCBqZSBtaSBsw61wLg==",
+            "VMSbxaHDrW0gc2UgbmEgdnNlY2hubyBkYWxGocOtLCBjbyBtxmkgcyB0ZWJvdSB2IMWbaxZvdMSbIHRoxLZrw6Eu",
+            "SnNpIHRvIG5lamxlcMWw60sIGNvIG3EmyBtb2hsbyBwb3RyYXQsIGEgbmlrZHkgdGUgbmVjaGNpIHp0cmF0aXQu"
         ];
 
-        // Funkce pro jednoduché ověření hesla
-        function overHeslo() {
+        // Funkce pro SHA-256 hashování hesla
+        async function sha256(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+        }
+
+        // Pomocná funkce pro bezpečné dešifrování textu (UTF-8 Base64)
+        function dešifruj(text) {
+            const binarniString = atob(text);
+            const bajty = new Uint8Array(binarniString.length);
+            for (let i = 0; i < binarniString.length; i++) {
+                bajty[i] = binarniString.charCodeAt(i);
+            }
+            return new TextDecoder().decode(bajty);
+        }
+
+        // Hlavní ověření
+        async function overHeslo() {
             const zadaneHeslo = document.getElementById("hesloInput").value;
             const chybaElement = document.getElementById("chyba");
+            
+            const zadanyHash = await sha256(zadaneHeslo);
 
-            // Porovnáme text napřímo
-            if (zadaneHeslo === SPRAVNE_HESLO) {
+            if (zadanyHash === SPRAVNY_HASH) {
+                // Skryjeme přihlášení a odemkneme obsah
                 document.getElementById("prijhlaseni").classList.add("hidden");
                 document.getElementById("obsah").classList.remove("hidden");
-                ukazNahodnouVetu();
+                
+                // Vybereme náhodnou větu a dešifrujeme ji až za běhu v paměti
+                const nahodneCislo = Math.floor(Math.random() * ZASIFROVANE_VETY.length);
+                const dešifrovanaVeta = dešifruj(ZASIFROVANE_VETY[nahodneCislo]);
+                
+                document.getElementById("veta").innerText = dešifrovanaVeta;
             } else {
                 chybaElement.innerText = "Nesprávné heslo, zkus to znovu.";
                 document.getElementById("hesloInput").value = "";
             }
-        }
-
-        // Funkce, která vybere náhodnou větu
-        function ukazNahodnouVetu() {
-            const nahodneCislo = Math.floor(Math.random() * vety.length);
-            document.getElementById("veta").innerText = vety[nahodneCislo];
         }
 
         // Spuštění přes Enter

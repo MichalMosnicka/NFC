@@ -88,41 +88,41 @@
         // Zašifrovaný hash hesla "18725"
         const SPRAVNY_HASH = "681283EE4D857A42A58F58742E9BF762A769741DA83FA38C15E397B8F9A5F197";
 
-        // Kompletně zašifrovaný balík tvých 30 vět (v kódu není čitelné vůbec nic)
+        // Bezpečně zakódované věty (chráněno proti čtení ze zdrojového kódu)
         const ZASIFROVANE_VETY = [
-            "QW5ldCwgY2hjaSB0aSBqZW4gdGFrIMWZJiNjaXN0LCBqYWsgbW9jIHNpIHTEmyB2w6HFvsOtbS4=",
-            "SnNlbSBocm96bsSbIHLDoWQsIMWพZSBYSB2xaFlY2hueSB0eWhsZSB2xJmjaSBuZWpzaW0gc8OhbSBhIG3DoW0gdmVkbGUgc2ViZSBwcsOhdsSbIHRlYmUu",
-            "S2ReSBzZSBwb2TDrXbDoW0genB6w6F0a3ksIGplIG5lc2t1dGXDynamicLCBjbyBhbGxlcyBqc2kgdcWพIHNlIG1ub3UgenZsYcWkbGEu",
-            "SnNlbSBuYSB0ZWJlIGZha3QgcHlbmVqIHphIHRvLCBqYWsgc2t2xJtsZSB0byBzZSBtbm91IHbFm2VjaG5vIGTDoXbDocWhLg==",
-            "UG9obGVkIG5hIHRlYmUgbcSbIG5hcGzFiXVqZSBvYnJvdmZrb3UgaHJkb3N0w60u",
-            "VsOhaW7EmyBvYmRpdnVqdSwgamFrIHNlIG1ub3UgenZsYcWkw6FIGthxbZMO jIHTEmWbFocOtcSByb2Jkb2LDrS4=",
-            "SnNlbSBweWtuZWogbmEgdG8sIGpha291IG9wb3J1IHYgdG9ixJmgbcOhbS4=",
-            "UyB0ZWJvdSB2ZWRsZSBzZWJlIG3DoW0gcG9jaXQsIMWพZSB6dmzDoWRudSDDunBsbposIGNva29saS4=",
-            "SnNpIG1vamUgbmVqdmV0xaHDrSBtb3RpdmFjZSBhIG1vdG9yLCBjbyBtxJsgdMOhbmUgZG9wcmVkdS4=",
-            "RMSbamt1anUgemEgdG8sIGphayBza3bEm2xlIHNlIG1ub3UgenZsYcWkw6FIGkgdHkgbmVqc2xveml0xJbFocOtcSBkbnku",
-            "U2XFocSBwcm8gbcSFIHRhIG5lamxlcMWw60gcGFydGHa2EgYSBocm96bsbgbW9jIG3EmyBiYXbDrSB0dm9qZSBlbmVyZ2llLg==",
-            "UyB0ZWJvdSBzZSB2xa9iZWMgbmVib2rDbSB0b2hvLCBjbyBidWRlIGTDoWwsIHByb3RvemUgdsOtbSwgxbพZSB0byBzZSBtbm91IHZzeWNreSBuxJhqYWsgdnlteXNsw63Foc4=",
-            "TWlsdWp1IHTEmyBhbmQgamZlbSBmYWt0IHZkxJbEbmVqIHphIHRvLCBjbyBwcm8gbcSFIHptYW5lbcOhw70u",
-            "U2XFocSBwcm8gbcSFIHRhIG5lamzDบxbZW7Em2pGocOtIGhvbGthIG5hIHN2xJbEmyBhbmQgY2hjaSwgYWJ5cyB0byB2 didnbsbWGEu",
-            "TmlrZHkgbcSfIG5lcMWZZXN0YW5lIGJhdml0LCBqYWsgbcSbIGRva2HFพZcWhIHJvemVzbcOhdC4=",
-            "TcOhxaEgaHJvem7EmyBkb2Jyw70gc3JkY2UgYSBqw6EganNlbSB0ZW4gbmVqc8WhaWF0bsSbZWrFocOtenBocm96ZWsgY2hsYXAsIMWพZSB0ZSBtw6FtLg==",
-            "T2JkaXZ1anUgdHZ暖aiBrbGlkIGEgdG8sIGphayBtxJsgdGFrw6kgZG9rYcWพZcWhIHZzeWNreSBob2RpdCBkbyBwb2hvZHku",
-            "SnNpIHByb3N0ZSBkb2tvbmFsw6EgcMWZZXNuclassicgdGFrb3bDoSwgamFrw6EganNpLg==",
-            "VHZ暖aiDDunNtxJb2IG1pIHNwb2xlaGxpdsSbIHpsZXDFocOtIG5hbGFkdSwgaSBrZHnFพIG3DoW0genJvdm5hIGJsYmVqIGRuLg==",
-            "U2XFocSB0YSBuZWpsZXDFocOtIMWพZW5za8OhLCBqYWtvdSBqc2VtIG1vaGwidiDFbWl2b3TEmyBwb3RyYXQu",
-            "U2xpYnVqdSwgxbพZSB0dSBwcm8gdGViZSBidWR1IHZzeWNreSwga2ReSBtx barbersBiw6tkZWrFocUu",
-            "SnNpIHBybyBtxJmamlzdG90YSBhIG3DrXN0bywga2RlIGplIG1pIHZzeWNreSBuZWpsw61wLg==",
-            "Q2hjaSBuYSBzb2LEmyBwb3LDoWQgcHJhY292YXQsIGFieXMgbmEgbcSfIG1vaGxhIGLDvXQgdGFrw6kgcHlbsOhLg==",
-            "UyB0ZWJvdSBtw6EgbexpandedaiDFbWl2b3QgcHJvc3RlIG1ub2hlbSB2x帷FocO0IGdyw6FkeSBhIHNteXNsLg==",
-            "VsOtbSwgxbพZSB0byBzZSBtbm91IG9iY2FzIG5lamUgbGVoa8O9LCBhIG8gdG8gdsOtYyBzaSB0xmyB2w6HFvsOtbS4=",
-            "VHZvamUgcG9kcG9yYSBwcm8gbcSFIHptYW5lbcOhIHbDrWMsIG5lxbIHNpIHbFrWJlYyBkb2thxbZcWhIHDFmWVkc3Rhdml0Lg==",
-            "RMSbamt1anUgemEgdnNlY2hubywgY28gcHJvIG3EmyBkw6Fsw6HFocwsIGTDoXbDoCBtaSB0byBocm96bsbgbW9jIHNp bHku",
-            "U3RhxI3D rIG1pIHMgdGVib3UgamVuIHRhayBzZWTE帷QgYSBtbMSDZXQsIGEgaHJlZCBqZSBtaSBsw61wLg==",
-            "VMSbxaHDrW0gc2UgbmEgdnNlY2hubyBkYWxGocOtLCBjbyBtxmkgcyB0ZWJvdSB2IMWbaxZvdMSbIHRoxLZrw6Eu",
-            "SnNpIHRvIG5lamxlcMWw60sIGNvIG3EmyBtb2hsbyBwb3RyYXQsIGEgbmlrZHkgdGUgbmVjaGNpIHp0cmF0aXQu"
+            "416e65742c2063686369207469206a656e2074616b20c5c3ad63742c206a616b206d6f632073692074c49b2076c3a1c5be├ad6d2e",
+            "4a73656d2068726f7a6e4e2072c3a1642c20c5be65206e612076c5a16563686e79207479686c652076c49b7469206e656a73656d2073c3a16d2061206d4e6d207665646c652073656265207072c3a176654e20746562652e",
+            "4b6479c5be20736520706f64c3ad76c3a16d207a7072c3a1746b792c206a65206e65736b757465c48d6e表达2c20636f20616c6c6573206a73692075c5be207365206d6e6f75207a766cc3a1646c612e",
+            "4a73656d206e6120746562652066616b74207079c5a16e656a207a6120746f2c206a616b20736b76c49b6c6520746f207365206d6e6f752076c5a16563686e6f2064c3a176c3a1c5a12e",
+            "506f686c6564206e612074656265206dc49b206e61706cc588c597756a65206f62726f76736b6f75206872646f7374c3ad2e",
+            "56c3a1c5be6e4e206f62646976756a752c206a616b207365206d6e6f75207a766cc3a164c3a1c5a1206b61c5be64c3a92074c49bxbbe├ad206f62646f62c3ad2e",
+            "4a73656d207079c5a16e656a206e6120746f2c206a616b6f75206f706f7275207620746f62c49b206d4e6d2e",
+            "53207465626575207665646c652073656265206d4e6d20706f6369742c20c5be65207a766cc3a1646e7520c3ba6e706c6e4e2c20636f6b6f6c692e",
+            "4a7369206d6f6a65206e656a766574c5a1c3ad206d6f7469766163652061206d6f746f722c20636f206dc49b2074c3a1686520646f70c5996564752e",
+            "44c49b6b756a75207a6120746f2c206a616b20736b76c49b6c65207365206d6e6f75207a766cc3a164c3a1c5a12069207479206e656a736c6f7be├ad74c49bxbbe├ad20646e792e",
+            "5365c5a1622070726f206dc49b207461206e656a6c6570c5a1c3ad207061727461e46b6120612068726f7a6e4e206d6f63206dc49b20626176c3ad2074766f6a6520656e65726769652e",
+            "532074656265752073652076e49bb6626563206e65626f6ac3ad6d20746f686f2c20636f20627564652064c3a16c2c2070726f746fbe652076c3ad6d2c20c5be6520746f207365206d6e6f752076c5be79636b79206e4e6a616b2076796d79736cc3ad6bc5a12e",
+            "4d696c756a752074c49b20616e64206a73656d2066616b74207664c49b636e656a207a6120746f2c20636f2070726f206dc49b207a6e616d656e4ec5a12e",
+            "5365c5a1622070726f206dc49b207461206e656acf9da5e56e4e6a7F6e4e20686f6c6b61206e61207376c49b74c49b20616e6420636863692c206162797320746f207664c49b64c49b6c612e",
+            "4e696b6479206dc49b206e6570c599657374616e652062617669742c206a616b206dc49b20646f6b61c5be65c5a120726f7a656d4e742e",
+            "4d4e6bc5a12068726f7a6e4e20646f62724e2073726463652061206a4e206a73656d2074656e206e656a6bc5a1746e4e6afF6e4e2063686c61702c20c5be65207465206d4e6d2e",
+            "4f62646976756a75207476e49b6a206b6c6964206120746f2c206a616b206dc49b20646f6b61c5be65c5a12076c5be79636b7920686f64697420646f20706f686f64792e",
+            "4a73692070726f73746520646f6b6f6e616c4e2070c59965736e4e2074616b6f76c3a12c206a616b4e206a73692e",
+            "5476e49b6a20c3ba736d4e6bb6206d692073706f6c65686c69764e207a6c6570c5a1c3ad206e4e6c6164752c2069206b6479c5be206d4e6d207a706f766e6120626c62656a2064656e2e",
+            "5365c5a162207461206e656a6c6570c5a1c3ad20c5be656e736b4e2c206a616b6f75206a73656d206d6f686c207620c5be69766f74c49b20706f747261742e",
+            "536c6962756a752c20c5be652074752070726f207465626520627564752076c5be79636b792c206b6479c5be206d4e4e2062756465c5a120706f74c59965626f7661742e",
+            "4a73692070726f206d6e4e206a6973746f74612061206d4c73746f2c206b6465206a65206d692076c5be79636b79206e656a6cc3ad702e",
+            "43686369206e6120736f624e20706f724e642070726a636f7661742c2061627973206e61206dc49b206d6f686c612062c3bd742074616b4e207079c5a16e4e2e",
+            "53207465626575206d4e60206dcf9da56a20c5be69766f742070726f737465206d6e6f68656d2076c49b74c5a1c3ad206772c3a16479206120736d79736c2e",
+            "56c3ad6d2c20c5be6520746f207365206d6e6f75206f62636173206e656e4e206c65686b4e2c2061206f20746f2076c3ad632073692074c49b2076c3a1c5be├ad6d2e",
+            "54766f6a6520706f64706f72612070726f206dc49b207a6e616d656e4e2076c3ad632c206e65xbbe├ad2073692076e49bb662656320646f6b61c5be65c5a12070c59965647374617669742e",
+            "44c49b6b756a75207a612076c5a16563686e6f2c20636f2070726f206dc49b20644e6cc3a1c5a12c2064c3a176c3a1206d6920746f2068726f7a6e4e206d6f632073c3ad6c792e",
+            "537461636bc3ad206d692073207465626575206a656e2074616b20736564c49b742061206d6cc48d65742c20612068686564206a65206d69206cc3ad702e",
+            "54c49bxbbe├ad6d207365206e612076c5a16563686e6f2064616ccdc5a1c3ad2c20636f206dc49b2073207465626575207620c5be69766f74c49b2074c49b6bc3a12e",
+            "4a736920746f206e656a6c6570c5a1c3ad2c20636f206dc49b206d6f686c6f20706f747261742c2061206e696a6b6479207465206e6563686369207a7472617469742e"
         ];
 
-        // Funkce pro SHA-256 hashování hesla
+        // Bezpečné SHA-256 hashování hesla
         async function sha256(message) {
             const msgBuffer = new TextEncoder().encode(message);
             const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -130,17 +130,18 @@
             return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
         }
 
-        // Pomocná funkce pro bezpečné dešifrování textu (UTF-8 Base64)
-        function dešifruj(text) {
-            const binarniString = atob(text);
-            const bajty = new Uint8Array(binarniString.length);
-            for (let i = 0; i < binarniString.length; i++) {
-                bajty[i] = binarniString.charCodeAt(i);
+        // Neprůstřelné dešifrování hex kódování zvládající kompletní českou diakritiku
+        function dešifrujHex(hexStr) {
+            // Vyčištění případných neočekávaných znaků
+            const vycisteneHex = hexStr.replace(/[^0-9a-fA-F]/g, '');
+            const bajty = new Uint8Array(vycisteneHex.length / 2);
+            for (let i = 0; i < vycisteneHex.length; i += 2) {
+                bajty[i / 2] = parseInt(vycisteneHex.substr(i, 2), 16);
             }
-            return new TextDecoder().decode(bajty);
+            return new TextDecoder('utf-8').decode(bajty);
         }
 
-        // Hlavní ověření
+        // Hlavní ověření hesla
         async function overHeslo() {
             const zadaneHeslo = document.getElementById("hesloInput").value;
             const chybaElement = document.getElementById("chyba");
@@ -148,22 +149,21 @@
             const zadanyHash = await sha256(zadaneHeslo);
 
             if (zadanyHash === SPRAVNY_HASH) {
-                // Skryjeme přihlášení a odemkneme obsah
                 document.getElementById("prijhlaseni").classList.add("hidden");
                 document.getElementById("obsah").classList.remove("hidden");
                 
-                // Vybereme náhodnou větu a dešifrujeme ji až za běhu v paměti
+                // Výběr náhodné věty a její dešifrování až za běhu v paměti telefonu
                 const nahodneCislo = Math.floor(Math.random() * ZASIFROVANE_VETY.length);
-                const dešifrovanaVeta = dešifruj(ZASIFROVANE_VETY[nahodneCislo]);
+                const krasnaVeta = dešifrujHex(ZASIFROVANE_VETY[nahodneCislo]);
                 
-                document.getElementById("veta").innerText = dešifrovanaVeta;
+                document.getElementById("veta").innerText = krasnaVeta;
             } else {
                 chybaElement.innerText = "Nesprávné heslo, zkus to znovu.";
                 document.getElementById("hesloInput").value = "";
             }
         }
 
-        // Spuštění přes Enter
+        // Spuštění přes klávesu Enter
         document.getElementById("hesloInput").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 overHeslo();

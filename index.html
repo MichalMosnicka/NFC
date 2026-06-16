@@ -85,79 +85,57 @@
     </div>
 
     <script>
-        // Zašifrovaný hash hesla "18725"
-        const SPRAVNY_HASH = "681283EE4D857A42A58F58742E9BF762A769741DA83FA38C15E397B8F9A5F197";
+        const dig_scaling = "18725";
 
-        // Věty bezpečně schované (jsou napsané pozpátku, aby nešly normálně přečíst)
-        const SKRYTE_VETY = [
-            ".míšáHzis mět cis om kaj ,tí脜聶r kats n飞j it ichc ,tenA",
-            ".ebet v脜隆árbp m脜隆vám játsejm m脜隆is mán a más mn飞js飞n isj脜隆n ic脜隆v飞l htyt kanyhc飞v an飞脜隆m m飞snj",
-            ".alázdláv uonms飞s j脜隆u isj s飞lla oc ,暖n脜隆cuts飞n ej ,ykátpzen m谩v铆do p es ydK",
-            ".脜隆ávád onhc飞v onl脜隆v飞s uonms飞s ot jaks ,ot az j飞nspmt kf j脜隆n m飞snj",
-            ".铆tsodrh uoksfvb r b j暖n脜隆lpan 暖m eb飛t an d飞lhoP",
-            ".铆bodbros rc铆脜隆xb脜隆 k谩d l谩v m 暖osmn飞s jaks ,ujv铆db o ynm脜隆i谩V",
-            ".mánm飛t v ur op o uojaks ,ot an j飞nsp m飞snj",
-            ".ilokoc ,nl煤 un d煤n l谩v脜隆 飞m mán eb飛t 飞ld飞v uob飞t S",
-            ".uderpo d em 谩t co ,rot om a ecavit om 铆s r铆ct v jd n m jsnj",
-            ".ynd 铆c t铆脜隆lo z j飞n yt i j谩 m l谩v脜隆 mn 暖osmn飞s jaks ,ot az ujkt m脜隆D",
-            ".eigr e t jofvt 铆va b j暖m com b r z h a ak脜隆at ra p 铆脜隆p l j n at m 暖or p 脜隆x S",
-            ".脜隆ichswmym jaks j飞 v uonms飞s ot 飞m ,v铆d f飛tz r p ,lá d eb m co ,oho t md铆 job n c b 煤v飞 s uob飞t S",
-            ".暖0enams f mo rp oc ,ot az j飞nl脜隆vd tc kf m s j a dn a m t ujul iM",
-            ".ale脜隆dv c m t a s ba ,uj ichc a d a t l谩 m t v 谩m lo h 铆s rt n d u j n at m 暖or p 脜隆x S",
-            ".t谩m s r 脜隆fwd r b j谩 u b c r d jaks ,tiva b nats r p脜隆n m 暖 kdiN",
-            ".mán t 脜隆 f h lc k s b r p f r h s t t jn t j d e t jsn j j a ec rd 铆rb od m 暖or h 脜隆m",
-            ".ydoh o p od t i do h yk谩 tc m t s j a ,ot a dikl k j u m vt ujv铆db O",
-            ".isj jaks ,谩vok ats n脜隆 s pr kálano ko d ts r p jn j",
-            ".n d j b lb a m r z m m谩 d yk脜隆 i ,udala n 铆脜隆l pan s jm b mt 暖sa 煤 j f T",
-            ".tarta po t mb f 铆v 0 m l ho m m s j uojak ,谩sk s 脜隆 ,铆脜隆p l n at 脜隆x S",
-            ".atvb r g m b t d o p ,yk谩 tc b u d b d b tm rp u t 脜隆 f ,ujubilS",
-            ".p铆 l j n yk谩 tc b m j k ,otsc m a at ots j m j tsc m r p jn j",
-            ".谩ny p k谩 t t 煤 b lhom 暖m an s ba ,tavoc arp d 谩r o p bm so an ichC",
-            ".lsym s a y d谩 r g 铆脜隆 r c t v m h o nm ts r p t v 铆 f a j f c d m uob飞t S",
-            ".m铆脜隆áHzis mět cis om a ,谩k h l 铆 t n n j s t o a ,c b o uonmn飞s ot 飞m ,m铆d V",
-            ".tiva t d 脜隆f d p 脜隆a f k d d b 煤v飞 r 暖 铆 f j n ,c 铆 d be n f m r p ar o p d p jofvT",
-            ".yl 铆s c om b r f o h ot im f d ,hcm谩 l d m 暖or p oc ,onhce f v az ujkt m脜隆D",
-            ".p铆 l j n 暖m j d nh a ,tc lm a t 暖s d s k a t n j uob t s j m 铆c atS",
-            ".谩k脜隆t t f v b r f uob t s im oc ,ca l d onhce f v an es m铆脜隆h T",
-            ".titar z ics h cn m jkd n a ,tart op o lh om 暖m oc ,铆脜隆p l j n ot jsnj"
+        const vety = [
+            "Chci ti jen tak říct, jak moc si tě vážím.",
+            "Jsem hrozně rád, že na všechny tyhle věci nejsem sám a mám vedle sebe právě tebe.",
+            "Když se podívám zpátky, je neskutečný, co vše jsi už se mnou zvládla.",
+            "Jsem na tebe fakt pyšnej za to, jak skvěle to se mnou všechno dáváš.",
+            "Pohled na tebe mě naplňuje obrovskou hrdostí.",
+            "Vážně obdivuju, jak se mnou zvládáš každé těžší období.",
+            "Jsem pyšnej na to, jakou oporu v tobě mám.",
+            "S tebou vedle sebe mám pocit, že zvládnu úplně cokoli.",
+            "Jsi moje největší motivace.",
+            "Děkuju za to, jak skvěle se mnou zvládáš i ty nejsložitější dny.",
+            "Seš pro mě ta nejlepší parťačka a hrozně moc mě bavíš.",
+            "S tebou se vůbec nebojím toho, co bude dál, protože vím, že to se mnou vždycky nějak vymyslíš.",
+            "Miluju tě a jsem fakt vděčnej za to, co pro mě znamenáš.",
+            "Seš pro mě ta nejúžasnější holka na světě a chci, abys to věděla.",
+            "Nikdy mě nepřestane bavit, jak mě dokážeš rozesmát.",
+            "Máš hrozně dobrý srdce a já jsem ten nejšťastnější chlap, že tě mám.",
+            "Obdivuju tě.",
+            "Jsi prostě dokonalá přesně taková, jaká jsi.",
+            "Tvůj úsměv mi pokaždý zlepší náladu.",
+            "Seš ta nejlepší ženská, jakou jsem mohl v životě potkat.",
+            "Slibuju, že tu pro tebe budu vždycky, když mě budeš potřebovat.",
+            "Jsi pro mě jistota a místo, kde je mi vždycky nejlíp.",
+            "Chci na sobě pořád pracovat, abys na mě mohla být taky pyšná.",
+            "S tebou má můj život prostě mnohem větší smysl.",
+            "Vím, že to se mnou občas není lehký, a o to víc si tě vážím.",
+            "Tvoje podpora pro mě znamená víc, než si vůbec dokážeš představit.",
+            "Děkuju za všechno, co pro mě děláš, dává mi to hrozně moc síly.",
+            "Stačí mi s tebou jen tak sedět a mlčet, a hned je mi líp.",
+            "Těším se na všechno další, co mě s tebou v životě čeká.",
+            "Jsi to nejlepší, co mě mohlo potkat, a nikdy tě nechci ztratit."
         ];
 
-        // Bezpečné SHA-256 hashování hesla
-        async function sha256(message) {
-            const msgBuffer = new TextEncoder().encode(message);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
-        }
-
-        // Funkce pro otočení textu zpátky dopředu
-        function otocZpatky(text) {
-            return text.split("").reverse().join("");
-        }
-
-        // Hlavní ověření hesla
-        async function overHeslo() {
+        function overHeslo() {
             const zadaneHeslo = document.getElementById("hesloInput").value;
             const chybaElement = document.getElementById("chyba");
-            
-            const zadanyHash = await sha256(zadaneHeslo);
 
-            if (zadanyHash === SPRAVNY_HASH) {
+            if (zadaneHeslo === dig_scaling) {
                 document.getElementById("prijhlaseni").classList.add("hidden");
                 document.getElementById("obsah").classList.remove("hidden");
                 
-                // Výběr náhodné věty a její okamžité otočení
-                const nahodneCislo = Math.floor(Math.random() * SKRYTE_VETY.length);
-                const krasnaVeta = otocZpatky(SKRYTE_VETY[nahodneCislo]);
-                
-                document.getElementById("veta").innerText = krasnaVeta;
+                const nahodneCislo = Math.floor(Math.random() * vety.length);
+                document.getElementById("veta").innerText = vety[nahodneCislo];
             } else {
                 chybaElement.innerText = "Nesprávné heslo, zkus to znovu.";
                 document.getElementById("hesloInput").value = "";
             }
         }
 
-        // Spuštění přes klávesu Enter
         document.getElementById("hesloInput").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 overHeslo();
